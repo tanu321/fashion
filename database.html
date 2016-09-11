@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<!-- saved from url=(0089)http://stackoverflow.com/questions/19899599/how-to-make-a-simple-database-query-in-meteor -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>javascript - How to make a simple database query in Meteor - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">
+
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded&amp;a">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="How to make a simple database query in Meteor">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="Every time I have a new idea for an application, I start with Meteor. And every time I end up using something else. And I think it comes down to me not knowing how to do a simple database query.
+
+H...">
+    <meta property="og:url" content="http://stackoverflow.com/questions/19899599/how-to-make-a-simple-database-query-in-meteor">
+    <link rel="canonical" href="http://stackoverflow.com/questions/19899599/how-to-make-a-simple-database-query-in-meteor">
+
+    
+    
+    <script type="text/javascript" async="" src="./javascript - How to make a simple database query in Meteor - Stack Overflow_files/ados"></script><script async="" src="./javascript - How to make a simple database query in Meteor - Stack Overflow_files/quant.js"></script><script async="" src="./javascript - How to make a simple database query in Meteor - Stack Overflow_files/beacon.js"></script><script async="" src="./javascript - How to make a simple database query in Meteor - Stack Overflow_files/analytics.js"></script><script src="./javascript - How to make a simple database query in Meteor - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./javascript - How to make a simple database query in Meteor - Stack Overflow_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./javascript - How to make a simple database query in Meteor - Stack Overflow_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;How to make a simple database query in Meteor&#39;" href="http://stackoverflow.com/feeds/question/19899599">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/19899599/how-to-make-a-simple-database-query-in-meteor">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/19899599/how-to-make-a-simple-database-query-in-meteor">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/19899599/how-to-make-a-simple-database-query-in-meteor">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:19899599});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '19899599');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1473401619,"routeName":"Questions/Show","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableInsertDocLinkDialog":true,"enableSocialMediaInSharePopup":true},"user":{"fkey":"6b0e72877c91b699358e0b19636cf39c","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true,"enableNewLinkInsertDialog":true},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"878083372498","js/moderator.en.js":"149d2aea60a9","js/full-anon.en.js":"7c1fbaf4ea95","js/full.en.js":"b899c763af81","js/wmd.en.js":"c2bce20b1a99","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"2f010d63bae8","js/help.en.js":"a2f92aacc060","js/tageditor.en.js":"9c6df10dabc4","js/tageditornew.en.js":"d698ef2a2b54","js/inline-tag-editing.en.js":"4fa1a4a3339e","js/revisions.en.js":"47de10a8358f","js/review.en.js":"a194a5c74389","js/tagsuggestions.en.js":"78eee7c19ab2","js/post-validation.en.js":"0370a6e17b86","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"814150caafaa","js/keyboard-shortcuts.en.js":"81e3cfdfd51c","js/external-editor.en.js":"93769406446f","js/external-editor.en.js":"93769406446f","js/snippet-javascript.en.js":"a33071d20297","js/snippet-javascript-codemirror.en.js":"7acbe89928f8"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script async="" src="./javascript - How to make a simple database query in Meteor - Stack Overflow_files/full-anon.en.js"></script><script async="" src="./javascript - How to make a simple database query in Meteor - Stack Overflow_files/snippet-javascript.en.js"></script><script async="" src="./javascript - How to make a simple database query in Meteor - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./javascript - How to make a simple database query in Meteor - Stack Overflow_files/prettify-full.en.js"></script><script async="" src="./javascript - How to make a simple database query in Meteor - Stack Overflow_files/external-editor.en.js"></script><link type="text/css" rel="stylesheet" href="./javascript - How to make a simple database query in Meteor - Stack Overflow_files/jobs-multi.min.css"><script async="" src="./javascript - How to make a simple database query in Meteor - Stack Overflow_files/ados.js"></script><script type="text/javascript" src="./javascript - How to make a simple database query in Meteor - Stack Overflow_files/adFeedback.js"></script><link rel="stylesheet" href="./javascript - How to make a simple database query in Meteor - Stack Overflow_files/adFeedback.css"></head>
+<body class="question-page new-topbar">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    
+        <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+
+
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+                    <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+        </ul>
+    </div>
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f19899599%2fhow-to-make-a-simple-database-query-in-meteor" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f19899599%2fhow-to-make-a-simple-database-query-in-meteor" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+            </div>
+    </div>
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+        <a href="http://blog.stackoverflow.com/" class="fr">company blog</a>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+                <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 160 Stack Exchange sites">
+                    <span class="hidden-text">Stack Exchange</span>
+                </a>
+
+    <a href="http://stackoverflow.com/questions/19899599/how-to-make-a-simple-database-query-in-meteor#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="http://stackoverflow.com/questions/19899599/how-to-make-a-simple-database-query-in-meteor#" class="topbar-icon icon-achievements yes-hover js-achievements-button " data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f19899599%2fhow-to-make-a-simple-database-query-in-meteor" class="login-link">sign up</a>
+                                <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f19899599%2fhow-to-make-a-simple-database-query-in-meteor" class="login-link">log in</a>
+
+                            <a href="http://stackoverflow.com/tour">tour</a>
+        <a href="http://stackoverflow.com/questions/19899599/how-to-make-a-simple-database-query-in-meteor#" class="icon-help js-help-button" title="Help Center and other resources">
+            help
+            <span class="triangle"></span>
+        </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://business.stackoverflow.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+                                            </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="Search Q&amp;A" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                            <li><a id="nav-jobs" href="http://stackoverflow.com/jobs?med=site-ui&amp;ref=jobs-tab">Jobs</a></li>
+                                                <li><a id="nav-docs" href="http://stackoverflow.com/documentation">Documentation</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+<div class="hero-box docs-announcement">
+    <div class="hero-close js-dismiss">Dismiss</div>
+    
+    
+    <div class="hero-content text-left">
+        <div class="text-wrapper">
+            <div class="hero-title">
+                Announcing Stack Overflow Documentation
+            </div>
+
+            <p class="subtitle">
+                We started with Q&amp;A. Technical documentation is next, and we need your help.
+            </p>
+            <p class="subtitle">
+                Whether you're a beginner or an experienced developer, you <i>can</i> contribute.
+            </p>
+        </div>
+
+            <a href="http://stackoverflow.com/users/signup?ssrc=docs_hero&amp;returnurl=%2Ftour%2Fdocumentation" class="btn js-gps-track" data-gps-track="docs.hero.clicked({target: 2 })">
+                Sign up and start helping →
+            </a>
+            <a href="http://stackoverflow.com/tour/documentation" class="btn-clear js-gps-track" data-gps-track="docs.hero.clicked({target: 1 })">
+                Learn more about Documentation →
+            </a>
+
+        <div class="img"></div>
+    </div>
+</div>
+
+<script>
+    StackExchange.ready(function() {
+        var location = 0;
+        if ($("body").hasClass("question-page")) {
+            location = 2;
+        } else if ($("body").hasClass("home-page")) {
+            location = 1;
+        }
+
+        $(".docs-announcement .js-dismiss").one("click", function() {
+            $(".docs-announcement").fadeOut("fast");
+            $.post("/dismiss-documentation-hero", { fkey: StackExchange.options.user.fkey, location: location });
+        });
+
+        StackExchange.using("gps", function () {
+            StackExchange.gps.track("docs.hero.show", { location: location }, true);
+        });
+    });
+</script>			<div id="question-header">
+                <h1 itemprop="name"><a href="http://stackoverflow.com/questions/19899599/how-to-make-a-simple-database-query-in-meteor" class="question-hyperlink">How to make a simple database query in Meteor</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="19899599" id="question">
+
+    <div class="everyonelovesstackoverflow adzerk-vote" id="clc-tlb"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjo0NzE0OTMsImNoIjoxMTc4LCJjayI6e30sImNyIjoxNjI3NzU5LCJkaSI6ImJlMzgyNDhlMTNiYjRjZjRiZjE3NDg1Y2U5MTM2NDg1IiwiZG0iOjEsImZjIjoxOTI0NDM3LCJmbCI6MjE0MjMxMiwiaXAiOiIyMDIuMTY0LjQ1LjIxNCIsImt3IjoiamF2YXNjcmlwdCxkYXRhYmFzZSxtb25nb2RiLG1ldGVvcixtZXRlb3JpdGUiLCJudyI6MjIsInBjIjowLCJlYyI6MCwicHIiOjE2MDQsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jby5pbi8iLCJzdCI6ODI3NywidWsiOiJ1ZTEtNmJiNjcyNDA4MzFjNGY5MzkxN2U0YjU1MzExMGUwYzIiLCJ6biI6NDMsInRzIjoxNDczNDAxNjIwNTUyLCJiZiI6dHJ1ZSwicG4iOiJjbGMtdGxiIiwidXIiOiJodHRwOi8vc3RhY2tvdmVyZmxvdy5jb20vam9icz91dG1fc291cmNlPXdlYnNpdGUmdXRtX21lZGl1bT1iYW5uZXImdXRtX2NvbnRlbnQ9bGVhZGVyYm9hcmRfMSZ1dG1fY2FtcGFpZ249aG91c2VfYWRzX2hvdXNlX2Fkc19ST1NfU08ifQ&amp;s=dfoDrcu597tVsWeP-OXa_aSX__8" rel="nofollow" target="_blank" title=""><img src="./javascript - How to make a simple database query in Meteor - Stack Overflow_files/35b68952b0d94bb48aa30e57e3e30873.png" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display: none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/19899599/how-to-make-a-simple-database-query-in-meteor#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./javascript - How to make a simple database query in Meteor - Stack Overflow_files/i.gif"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="19899599">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="http://stackoverflow.com/questions/19899599/how-to-make-a-simple-database-query-in-meteor#">favorite</a>
+        <div class="favoritecount"><b>1</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>Every time I have a new idea for an application, I start with Meteor. And every time I end up using something else. And I think it comes down to me not knowing how to do a simple database query.</p>
+
+<p>Here's a hypothetical example. I want to make an app where the user types something into a box, presses a button, and then an image of whatever they typed in shows up. It uses some image search api.</p>
+
+<pre class="lang-js prettyprint prettyprinted"><code><span class="pun">&lt;</span><span class="pln">template name</span><span class="pun">=</span><span class="str">"image"</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="pun">&lt;</span><span class="pln">input type</span><span class="pun">=</span><span class="str">"text"</span><span class="pln"> </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"description"</span><span class="pun">&gt;&lt;/</span><span class="pln">input</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="pun">&lt;</span><span class="pln">button </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"showImage"</span><span class="pun">&gt;&lt;/</span><span class="pln">button</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="pun">&lt;</span><span class="pln">img src</span><span class="pun">=</span><span class="str">"{{img}}"</span><span class="pun">&gt;&lt;/</span><span class="pln">img</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="pun">&lt;/</span><span class="pln">template</span><span class="pun">&gt;</span></code></pre>
+
+<p>Seems simple enough so far. Now there isn't a way to send information to the client without putting it in a database first, as is my understanding. Let's assume we have some function addToDB that takes queries and enters the image information into the database.</p>
+
+<pre class="lang-js prettyprint prettyprinted"><code><span class="typ">Template</span><span class="pun">.</span><span class="pln">image</span><span class="pun">.</span><span class="pln">events</span><span class="pun">({</span><span class="pln">
+    </span><span class="str">'click .showImage'</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        addToDB</span><span class="pun">(</span><span class="pln">$</span><span class="pun">(</span><span class="str">'.description'</span><span class="pun">).</span><span class="pln">val</span><span class="pun">());</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">});</span></code></pre>
+
+<p>Great! That's still not too bad. But now to send the data back to the client...</p>
+
+<pre class="lang-js prettyprint prettyprinted"><code><span class="com">//server.js</span><span class="pln">
+</span><span class="typ">Meteor</span><span class="pun">.</span><span class="pln">publish</span><span class="pun">(</span><span class="str">"image"</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">(</span><span class="pln">query</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="typ">Images</span><span class="pun">.</span><span class="pln">find</span><span class="pun">({</span><span class="pln">q</span><span class="pun">:</span><span class="pln"> query</span><span class="pun">});</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>But wait. We can't just subscribe when the client loads, because we don't know the query yet. So maybe the event handler needs to be</p>
+
+<pre class="lang-js prettyprint prettyprinted"><code><span class="typ">Template</span><span class="pun">.</span><span class="pln">image</span><span class="pun">.</span><span class="pln">events</span><span class="pun">({</span><span class="pln">
+    </span><span class="str">'click .showImage'</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        addToDB</span><span class="pun">(</span><span class="pln">$</span><span class="pun">(</span><span class="str">'.description'</span><span class="pun">).</span><span class="pln">val</span><span class="pun">());</span><span class="pln">
+        </span><span class="typ">Deps</span><span class="pun">.</span><span class="pln">autorun</span><span class="pun">(</span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">Meteor</span><span class="pun">.</span><span class="pln">subscribe</span><span class="pun">(</span><span class="str">"images"</span><span class="pun">,</span><span class="pln"> $</span><span class="pun">(</span><span class="str">'.description'</span><span class="pun">).</span><span class="pln">val</span><span class="pun">());</span><span class="pln">
+    </span><span class="pun">});</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">});</span></code></pre>
+
+<p>Okay, let's feed that into the template...</p>
+
+<pre class="lang-js prettyprint prettyprinted"><code><span class="typ">Template</span><span class="pun">.</span><span class="pln">image</span><span class="pun">.</span><span class="pln">img </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">Images</span><span class="pun">.</span><span class="pln">findOne</span><span class="pun">().</span><span class="pln">imgsrc</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>Nope, that results in an error because when the template is first loaded, we haven't subscribed to Images yet. So we can update the template like so:</p>
+
+<pre class="lang-js prettyprint prettyprinted"><code><span class="pun">&lt;</span><span class="pln">template name</span><span class="pun">=</span><span class="str">"image"</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="pun">&lt;</span><span class="pln">input type</span><span class="pun">=</span><span class="str">"text"</span><span class="pln"> </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"description"</span><span class="pun">&gt;&lt;/</span><span class="pln">input</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="pun">&lt;</span><span class="pln">button </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"showImage"</span><span class="pun">&gt;&lt;/</span><span class="pln">button</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="pun">{{#</span><span class="pln">each info</span><span class="pun">}}</span><span class="pln">
+    </span><span class="pun">&lt;</span><span class="pln">img src</span><span class="pun">=</span><span class="str">"{{info.img}}"</span><span class="pun">&gt;&lt;/</span><span class="pln">img</span><span class="pun">&gt;</span><span class="pln">
+    </span><span class="pun">{{/</span><span class="pln">each</span><span class="pun">}}</span><span class="pln">
+</span><span class="pun">&lt;/</span><span class="pln">template</span><span class="pun">&gt;</span></code></pre>
+
+<p>And then change the template filling function to:</p>
+
+<pre class="lang-js prettyprint prettyprinted"><code><span class="typ">Template</span><span class="pun">.</span><span class="pln">image</span><span class="pun">.</span><span class="pln">info </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">Images</span><span class="pun">.</span><span class="pln">find</span><span class="pun">({},</span><span class="pln"> </span><span class="pun">{</span><span class="pln">limit</span><span class="pun">:</span><span class="pln"> </span><span class="lit">1</span><span class="pun">});</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>And voila!</p>
+
+<p>I spent longer than I'm willing to admit stumbling through all of that this evening. If it was just plain old node, I could've used some simple jQuery.</p>
+
+<p>But there are a million amazing features that Meteor has that I really want to take advantage of. So what I'm hoping is that someone can show me the way. What mistakes did I make in this process, and in the final result? What's the nicest, cleanest, simplest way to get this done within a meteor app.</p>
+
+<p>This is so complicated, within a framework that makes so many other things so simple. So how can I just make a simple database query?</p>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/javascript" class="post-tag js-gps-track" title="show questions tagged &#39;javascript&#39;" rel="tag">javascript</a> <a href="http://stackoverflow.com/questions/tagged/database" class="post-tag js-gps-track" title="show questions tagged &#39;database&#39;" rel="tag">database</a> <a href="http://stackoverflow.com/questions/tagged/mongodb" class="post-tag js-gps-track" title="show questions tagged &#39;mongodb&#39;" rel="tag">mongodb</a> <a href="http://stackoverflow.com/questions/tagged/meteor" class="post-tag js-gps-track" title="show questions tagged &#39;meteor&#39;" rel="tag">meteor</a> <a href="http://stackoverflow.com/questions/tagged/meteorite" class="post-tag js-gps-track" title="show questions tagged &#39;meteorite&#39;" rel="tag">meteorite</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/19899599" title="short permalink to this question" class="short-link" id="link-post-19899599">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/19899599/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2013-11-11 05:41:39Z" class="relativetime">Nov 11 '13 at 5:41</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1443026/fnsjdnfksjdb"><div class="gravatar-wrapper-32"><img src="./javascript - How to make a simple database query in Meteor - Stack Overflow_files/5ff36a040a5d09a11a2a33ead8034a0e" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1443026/fnsjdnfksjdb">fnsjdnfksjdb</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">313</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="14 bronze badges"><span class="badge3"></span><span class="badgecount">14</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-19899599" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-19899599" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/19899599/how-to-make-a-simple-database-query-in-meteor#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								1 Answer
+                                <span style="display:none;" itemprop="answerCount">1</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/19899599/how-to-make-a-simple-database-query-in-meteor?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="http://stackoverflow.com/questions/19899599/how-to-make-a-simple-database-query-in-meteor?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/19899599/how-to-make-a-simple-database-query-in-meteor?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="19900059"></a>
+<div id="answer-19900059" class="answer accepted-answer" data-answerid="19900059" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="19900059">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Consider looking at the meteor examples they <a href="http://www.meteor.com/examples/todos" rel="nofollow">provide</a>.  All of the examples have the functionality of taking user input, managing collections, and displaying collection queries to templates.  </p>
+
+<p>Most of your code looks fine but you are asking several questions at once and starting from a perspective that makes it difficult to answer.  Some general notes:</p>
+
+<ul>
+<li>consider using Session to hold variables a user sets with an event.  </li>
+<li>subscribe to the data you want by passing Session variable to a Deps.autorun function</li>
+<li>display the data you want by passing a Session variable to the template.</li>
+<li>basic javascript rules still apply - <code>null.someThingIWant</code> is an error.  A handy pattern is <code>return something &amp;&amp; something.someThingIWant;</code></li>
+</ul>
+
+<p>One problem in the code above is that your publish is not returning the query results.  I assume that is a typo.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/19900059" title="short permalink to this answer" class="short-link" id="link-post-19900059">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/19900059/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-11-11 06:20:53Z" class="relativetime">Nov 11 '13 at 6:20</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/728291/user728291"><div class="gravatar-wrapper-32"><img src="./javascript - How to make a simple database query in Meteor - Stack Overflow_files/97cb11a52c51721c7d5111791c587737" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/728291/user728291">user728291</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,794</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="9 silver badges"><span class="badge2"></span><span class="badgecount">9</span></span><span title="18 bronze badges"><span class="badge3"></span><span class="badgecount">18</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-19900059" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-29606531" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Thanks, this is the kind of answer I was looking for. Session variables, and that last pattern, are things I hadn't thought of.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1443026/fnsjdnfksjdb" title="313 reputation" class="comment-user owner">fnsjdnfksjdb</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/19899599/how-to-make-a-simple-database-query-in-meteor#comment29606531_19900059"><span title="2013-11-11 06:28:13Z" class="relativetime-clean">Nov 11 '13 at 6:28</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-29619277" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@fnsjdnfksjdb: remember to upvote and accept the answer if it helped you!</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/876409/hubert-og" title="14,052 reputation" class="comment-user">Hubert OG</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/19899599/how-to-make-a-simple-database-query-in-meteor#comment29619277_19900059"><span title="2013-11-11 13:44:29Z" class="relativetime-clean">Nov 11 '13 at 13:44</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-19900059" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/19899599/how-to-make-a-simple-database-query-in-meteor#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="http://stackoverflow.com/questions/19899599/answer/submit" method="post" class="post-form">
+						    <input type="hidden" id="post-id" value="19899599">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="https://www.google.co.in/">
+							<h2 class="space">Your Answer</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.settings.snippets.snippetsEnabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: true,
+                reputationToPostImages: 10,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="6b0e72877c91b699358e0b19636cf39c">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+							<div style="position: relative;">
+								
+								            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f19899599%2fhow-to-make-a-simple-database-query-in-meteor%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google" class="use-google" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'http%3a%2f%2fstackoverflow.com%2fquestions%2f19899599%2fhow-to-make-a-simple-database-query-in-meteor%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" /&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+									<a href="http://stackoverflow.com/questions/19899599/how-to-make-a-simple-database-query-in-meteor#" class="btn-clear discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/javascript" class="post-tag" title="show questions tagged &#39;javascript&#39;" rel="tag">javascript</a> <a href="http://stackoverflow.com/questions/tagged/database" class="post-tag" title="show questions tagged &#39;database&#39;" rel="tag">database</a> <a href="http://stackoverflow.com/questions/tagged/mongodb" class="post-tag" title="show questions tagged &#39;mongodb&#39;" rel="tag">mongodb</a> <a href="http://stackoverflow.com/questions/tagged/meteor" class="post-tag" title="show questions tagged &#39;meteor&#39;" rel="tag">meteor</a> <a href="http://stackoverflow.com/questions/tagged/meteorite" class="post-tag" title="show questions tagged &#39;meteorite&#39;" rel="tag">meteorite</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2013-11-11 05:41:39Z"><b>2 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>1379 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/19899599/how-to-make-a-simple-database-query-in-meteor?lastactivity" class="lastactivity-link" title="2013-11-11 06:20:53Z">2 years ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<div class="everyonelovesstackoverflow orange remote tagged clc-jobs-multi" id="hireme"><a href="http://stackoverflow.com/jobs?allowsremote=true" target="_blank" data-at="0" data-tz="1" data-ti="14" class="top "><span>Work from anywhere</span></a><div class="middle"><ul class="jobs"><li class="clc-dismissable"><div class="job-wrap"><a class="job" data-at="0" data-tz="3" data-ti="216247" href="http://stackoverflow.com/jobs/116247/experienced-frontend-engineer-citrusbyte" target="_blank" title="Experienced Frontend Engineer at Citrusbyte. Click to learn more."><div class="title">Experienced Frontend Engineer</div><div><span class="company">Citrusbyte</span><span class="location">No office location</span></div><div class="opts"><span class="opt remote">Remote</span><span class="opt relocate">Relocation</span></div><span class="post-tag">javascript</span><span class="post-tag">reactjs</span></a></div><a class="clc-dismiss clc-non-ad" data-clc-url="//clc.stackoverflow.com/dismiss-job" data-clcparam-cid="216247" data-clc-tooltip="dismiss this job"><span class="clc-tooltip above-left">dismiss this job</span></a></li><li class="clc-dismissable"><div class="job-wrap"><a class="job" data-at="0" data-tz="3" data-ti="218415" href="http://stackoverflow.com/jobs/118415/automation-test-engineer-hearst-television" target="_blank" title="Automation Test Engineer at Hearst Television. Click to learn more."><div class="title">Automation Test Engineer</div><div><span class="company">Hearst Television</span><span class="location">No office location</span></div><div class="opts"><span class="opt remote">Remote</span></div><span class="post-tag">javascript</span><span class="post-tag">php</span></a></div><a class="clc-dismiss clc-non-ad" data-clc-url="//clc.stackoverflow.com/dismiss-job" data-clcparam-cid="218415" data-clc-tooltip="dismiss this job"><span class="clc-tooltip above-left">dismiss this job</span></a></li><li class="clc-dismissable"><div class="job-wrap"><a class="job" data-at="0" data-tz="3" data-ti="219173" href="http://stackoverflow.com/jobs/119173/senior-full-stack-dev-small-team-of-experts-analytics-fire" target="_blank" title="SENIOR FULL-STACK DEV -- SMALL TEAM OF EXPERTS -- 100% REMOTE, FLEXIBLE HOURS at Analytics Fire. Click to learn more."><div class="title">SENIOR FULL-STACK DEV -- SMALL TEAM OF EXPERTS -- 100% REMOTE, FLEXIBLE HOURS</div><div><span class="company">Analytics Fire</span><span class="location">No office location</span></div><div class="opts"><span class="opt remote">Remote</span></div><span class="post-tag">javascript</span><span class="post-tag">ruby-on-rails</span></a></div><a class="clc-dismiss clc-non-ad" data-clc-url="//clc.stackoverflow.com/dismiss-job" data-clcparam-cid="219173" data-clc-tooltip="dismiss this job"><span class="clc-tooltip above-left">dismiss this job</span></a></li><li class="clc-dismissable"><div class="job-wrap"><a class="job" data-at="0" data-tz="3" data-ti="187098" href="http://stackoverflow.com/jobs/101151/senior-lead-frontend-web-developer-with-angular-compucorp" target="_blank" title="Senior / Lead Frontend Web Developer with Angular JS (PHP) at Compucorp. Click to learn more."><div class="title">Senior / Lead Frontend Web Developer with Angular JS (PHP)</div><div><span class="company">Compucorp</span><span class="location">London, UK</span></div><div class="opts"><span class="salary">£25,000 - £40,000</span><span class="opt remote">Remote</span></div><span class="post-tag">javascript</span><span class="post-tag">angularjs</span></a></div><a class="clc-dismiss clc-non-ad" data-clc-url="//clc.stackoverflow.com/dismiss-job" data-clcparam-cid="187098" data-clc-tooltip="dismiss this job"><span class="clc-tooltip above-left">dismiss this job</span></a></li></ul><div style="clear:both"></div></div><img class="impression" src="./javascript - How to make a simple database query in Meteor - Stack Overflow_files/soi.gif" style="display:none;"></div>
+        <script>
+;(function(n){var r,t,i;try{if(typeof[].indexOf!="function")return;if(r=["stackoverflow.com","serverfault.com","careers.stackoverflow.com","blog.codinghorror.com","joelonsoftware.com","www.joelonsoftware.com"],r[0]!=="*"&&r.indexOf(location.hostname)===-1)return;t=window;t.clc_opts=n;n.autoload&&(t.clc_init=t.clc_init||[],t.clc_init.push(function(){return t.clc.load()}));i=document.createElement("script");i.async=!0;i.src=n.lib;document.body.appendChild(i)}catch(u){}}).call(null, {"az":true,"kt":2000,"tto":true,"autoload":true,"d":{"sb":["hireme","clc-sb"],"tlb":["careers1","clc-tlb"],"mlb":["careers3","clc-mlb"]},"allowed":["stackoverflow.com","serverfault.com","careers.stackoverflow.com","blog.codinghorror.com","joelonsoftware.com","www.joelonsoftware.com"],"h":"clc.stackoverflow.com","u":"//clc.stackoverflow.com/p.js","lib":"//cdn.sstatic.net/clc/clc.min.js?v=9bfd011f6c3f"});        </script>
+			
+
+            
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/16798776?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="http://stackoverflow.com/questions/16798776/meteor-collection-not-updating?rq=1" class="question-hyperlink">Meteor Collection not updating</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/18577825?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="http://stackoverflow.com/questions/18577825/when-update-nested-collection-in-meteor-how-to-pass-variable-for-the-update-pat?rq=1" class="question-hyperlink">When update nested collection in meteor, how to pass variable for the update path</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/20486520?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="http://stackoverflow.com/questions/20486520/using-meteoric-to-deploy-meteor-js-mongoerror-auth-fails?rq=1" class="question-hyperlink">Using Meteoric to deploy Meteor.js, MongoError: auth fails</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/20856099?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">5</div></a><a href="http://stackoverflow.com/questions/20856099/meteor-js-store-images-to-mongodb?rq=1" class="question-hyperlink">Meteor Js , Store images to mongoDB</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/21919794?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">2</div></a><a href="http://stackoverflow.com/questions/21919794/using-streaming-data-from-twitter-with-meteor?rq=1" class="question-hyperlink">Using Streaming Data from Twitter with Meteor</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/23149296?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="http://stackoverflow.com/questions/23149296/use-an-image-collection-in-meteor?rq=1" class="question-hyperlink">Use an Image Collection in Meteor</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/25944207?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="http://stackoverflow.com/questions/25944207/use-values-submitted-in-a-form-to-publish-and-subscribe-results-of-a-mongodb-que?rq=1" class="question-hyperlink">use values submitted in a form to publish and subscribe results of a mongodb query in meteor</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/26225685?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">4</div></a><a href="http://stackoverflow.com/questions/26225685/meteor-js-client-not-getting-data-from-mongo-db?rq=1" class="question-hyperlink">Meteor JS : Client not getting data from Mongo DB</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/28310145?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">2</div></a><a href="http://stackoverflow.com/questions/28310145/user-specific-fields-in-simple-schema-autoform-collection-insert-meteor?rq=1" class="question-hyperlink">User-specific fields in simple-schema/AutoForm collection insert [Meteor]</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/33712144?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="http://stackoverflow.com/questions/33712144/querying-meteor-collection-works-on-the-localhost-fails-on-server?rq=1" class="question-hyperlink">Querying Meteor collection (works on the localhost, fails on server)</a></div>
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-wordpress" title="WordPress Development Stack Exchange"></div><a href="http://wordpress.stackexchange.com/questions/238668/how-to-add-some-custom-html-into-wordpress-admin-bar" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:110 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to add some custom HTML into wordpress admin bar?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/78307/why-am-i-not-allowed-to-buy-alcohol-at-the-store-after-11pm-in-russia" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why am I not allowed to buy alcohol at the store after 11pm in Russia?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-gis" title="Geographic Information Systems Stack Exchange"></div><a href="http://gis.stackexchange.com/questions/210051/field-calculating-a-unique-date-and-time" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:79 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Field calculating a unique date and time
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/54324/would-a-full-body-diamond-armor-and-sword-guarantee-survival-and-victory-against" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Would a full body diamond armor and sword guarantee survival and victory against a medieval battalion?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-sqa" title="Software Quality Assurance &amp; Testing Stack Exchange"></div><a href="http://sqa.stackexchange.com/questions/22476/manual-testing-is-better-than-automation-testing-is-that-true" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:244 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Manual testing is better than Automation testing. Is that true?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/125911/volume-bounded-by-two-spheres" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Volume bounded by two spheres
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-movies" title="Movies &amp; TV Stack Exchange"></div><a href="http://movies.stackexchange.com/questions/60415/who-portrayed-ray-finkle-in-the-file-photo" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:367 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Who portrayed Ray Finkle in the file photo?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/125918/how-to-replaceall-except-within-specified-heads" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to ReplaceAll except within specified heads
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/39391107/why-are-hashsets-of-structs-with-nullable-values-incredibly-slow" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are HashSets of structs with nullable values incredibly slow?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/328667/arrows-over-under-and-around-math-text" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Arrows over, under and around math text?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="http://workplace.stackexchange.com/questions/75595/coworker-is-easily-and-often-offended-and-doesnt-want-us-to-mention-offensive-t" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Coworker is easily and often offended and doesn't want us to mention offensive topics like facial hair
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/76511/can-a-student-be-a-provider-of-letter-of-recommendation-for-research-based-ms" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can a student be a provider of letter of recommendation for research based MS - USA
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a href="http://askubuntu.com/questions/822783/run-a-command-when-any-new-window-opens" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Run a command when any new window opens?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/347426/use-of-pussy-as-term-of-endearment" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Use of 'pussy' as term of endearment
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/139829/has-there-ever-been-an-instance-in-star-trek-where-someone-beamed-into-a-solid-o" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Has there ever been an instance in Star Trek where someone beamed into a solid object?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/1916266/is-there-a-positive-definition-for-irrational-numbers" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there a "positive" definition for irrational numbers?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-astronomy" title="Astronomy Stack Exchange"></div><a href="http://astronomy.stackexchange.com/questions/18260/does-the-moon-have-days" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:514 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does the moon have days?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-serverfault" title="Server Fault"></div><a href="http://serverfault.com/questions/801761/ext4-running-out-of-inodes" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:2 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    ext4: Running out of inodes
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/87709/can-a-psionic-talent-be-cast-wearing-heavy-armor" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can A Psionic Talent Be Cast Wearing Heavy Armor?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/308722/how-to-get-block-device-name-from-partition-device-name" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to get block device name from partition device name?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/92598/bitflip-and-negate" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Bitflip and negate
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/136227/what-is-tabnapping" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is 'tabnapping'?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/54633/0g-pool-can-i-keep-a-big-ball-of-water-in-space" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    0g pool: can I keep a big ball of water in space?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="http://electronics.stackexchange.com/questions/256630/pull-up-resistor-clarification" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Pull-up resistor clarification
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/19899599" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/19899599/ivc/4942');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/19899599/ivc/4942" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">lang-js</div></div>
+
+
+        </div>
+    </div><script async="" src="./javascript - How to make a simple database query in Meteor - Stack Overflow_files/clc.min.js"></script>
+    <div id="footer" class="categories">
+        <div class="footerwrap">            
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                    <a href="http://stackoverflow.com/company/about">about us</a>
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackoverflow.com/company/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="4">
+                Technology
+            </th>
+            <th colspan="2">
+                Life / Arts
+            </th>
+            <th colspan="2">
+                Culture / Recreation
+            </th>
+            <th colspan="2">
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                        <li><a href="http://crypto.stackexchange.com/" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://codereview.stackexchange.com/" title="peer programmer code reviews">Code Review</a></li>
+                        <li><a href="http://magento.stackexchange.com/" title="users of the Magento e-Commerce platform">Magento</a></li>
+                        <li><a href="http://dsp.stackexchange.com/" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                        <li><a href="http://raspberrypi.stackexchange.com/" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                        <li><a href="http://codegolf.stackexchange.com/" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://music.stackexchange.com/" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (8)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://ell.stackexchange.com/" title="speakers of other languages learning English">English Language Learners</a></li>
+                        <li><a href="http://japanese.stackexchange.com/" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                        <li><a href="http://anime.stackexchange.com/" title="anime and manga fans">Anime &amp; Manga</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (18)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                        <li><a href="http://cs.stackexchange.com/" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://philosophy.stackexchange.com/" title="those interested in logical reasoning">Philosophy</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (3)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2016 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2016.9.9.3962
+            </div>
+                </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+        <script> setTimeout(function() { $("#adzerk-user-match").remove(); }, 2000);</script>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+            
+            ga('create', 'UA-5620270-1');
+            ga('set', 'dimension2', '|javascript|database|mongodb|meteor|meteorite|');             ga('send', 'pageview');
+        
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+                qc.async = true;
+                qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                s.parentNode.insertBefore(qc, s);
+                _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                            var sc=document.createElement('script');
+                sc.async=true;
+                sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+                s.parentNode.insertBefore(sc, s);
+                _comscore.push({ c1: "2", c2: "17440561" });
+        })();
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i) || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') service =  2;
+                                    else if (service === 'Place') service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', function() {
+                                        StackExchange.gps.track('google_maps_places_api.call', { service: service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+    
+<script async="" src="./javascript - How to make a simple database query in Meteor - Stack Overflow_files/p.js"></script></body></html>
