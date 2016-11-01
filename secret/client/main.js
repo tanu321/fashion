@@ -6,15 +6,17 @@ Template.camera.events({
     });
 
     Webcam.set({
-        width: 320,
-        height: 240,
-        dest_width: 640,
-        dest_height: 480,
+        width: 600,
+        height: 500,
+        dest_width: 500,
+        dest_height: 300,
         image_format: 'jpeg',
         jpeg_quality: 90
     });
     Webcam.attach( '#webcam' );
-    Webcam.style.marginLeft='50%';
+    Webcam.style.marginRight='50%';
+    Webcam.style.borderRadius='3px solid red';
+    
 }
 });
 
@@ -37,6 +39,9 @@ Template.photo.helpers({
 Template.crop.events({
  'click #shirts':function(){
  $(".shirts").toggle();
+ $(".dresses").toggle();
+ $( ".picss" ).draggable();
+ $( ".picss" ).resizable();
 }
 });
 
@@ -66,8 +71,7 @@ Template.crop.onRendered(function(){
             // Draw  image onto the canvas
             imageObj.onload = function() {
                 ctx.drawImage(imageObj, 0, 0);
-
-            };
+                                         };
             imagesrc = images.find({},{sort: {timestamp: -1}}).fetch(); 
             imageObj.src = imagesrc[0].src;
 
